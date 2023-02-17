@@ -1,0 +1,32 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Stok
+@{
+    ViewBag.Title = "StokGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Stok Güncelle</h2>
+<br />
+@using (Html.BeginForm("StokGuncelle", "Stok", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ürünid)
+    @Html.TextBoxFor(x => x.ürünid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.adet)
+    @Html.TextBoxFor(x => x.adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.arızalıürünsayısı)
+    @Html.TextBoxFor(x => x.arızalıürünsayısı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ürünler)
+    @Html.DropDownListFor(x => x.ürünid, (List<SelectListItem>)ViewBag.dgr1, new
+    {
+        @class =
+   "form-control"
+    })
+    @*@Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>ViewBag.deger1))*@
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+}
+

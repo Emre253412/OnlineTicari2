@@ -1,0 +1,24 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Satışhareketi>
+@{
+    ViewBag.Title = "Siparişlerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+<h2>Siparişlerim</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ürünler.ürünad</td>
+            <td>@x.fiyat</td>
+            <td>@Convert.ToDateTime(x.tarih).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,29 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Personel Güncelle </h2>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.personelid)
+    @Html.LabelFor(x => x.personelad)
+    @Html.TextBoxFor(x => x.personelad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelsoyad)
+    @Html.TextBoxFor(x => x.personelsoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelgorsel)
+    @Html.TextBoxFor(x => x.personelgorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.departman)
+    @Html.DropDownListFor(x => x.departmanid, (List<SelectListItem>)ViewBag.dgr1)
+
+    <br />
+
+    <button class="btn btn-warning">Güncelle</button>
+
+}

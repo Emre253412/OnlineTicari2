@@ -1,0 +1,26 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Stok
+@{
+    ViewBag.Title = "YeniStok";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Yeni Ürün</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.HiddenFor(x => x.stokid)
+
+    @Html.LabelFor(x => x.adet)
+    @Html.TextBoxFor(x => x.adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.arızalıürünsayısı)
+    @Html.TextBoxFor(x => x.arızalıürünsayısı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ürünler)
+    @Html.DropDownListFor(x => x.ürünid, (List<SelectListItem>)ViewBag.dgr1, new
+    {
+        @class =
+   "form-control"
+    })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>

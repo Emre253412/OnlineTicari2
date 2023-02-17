@@ -1,0 +1,24 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Faturakalem
+@{
+    ViewBag.Title = "FaturaKalemEkle";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Yeni Fatura Kalem</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.acıklama)
+    @Html.TextBoxFor(x => x.acıklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.miktar)
+    @Html.TextBoxFor(x => x.miktar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.birimfiyat)
+    @Html.TextBoxFor(x => x.birimfiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.tutar)
+    @Html.TextBoxFor(x => x.tutar, new { @class = "form-control" })
+   
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

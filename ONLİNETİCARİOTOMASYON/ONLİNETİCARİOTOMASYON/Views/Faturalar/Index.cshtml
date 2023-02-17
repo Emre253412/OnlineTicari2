@@ -1,0 +1,49 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        @if (User.IsInRole("a"))
+        {
+            <th>Güncelle</th>
+        }
+        <th>Detaylar</th>
+    </tr>
+    
+    @foreach (var k in Model)
+    {
+<tr>
+    <td>@k.faturaid</td>
+    <td>@k.faturaserino</td>
+    <td>@k.faturasırano</td>
+    <td>@k.vergidairesi</td>
+    <td>@k.tarih</td>
+    <td>@k.saat</td>
+    <td>@k.toplam</td>
+    <td>@k.teslimeden</td>
+    <td>@k.teslimalan</td>
+    @if (User.IsInRole("a"))
+    {
+        <td><a href="/Faturalar/FaturaGetir/@k.faturaid" class="btn btn-danger">Güncelle</a></td>
+    }
+
+    <td><a href="/Faturalar/FaturaDetay/@k.faturaid" class="btn btn-success">Detaylar</a></td>
+</tr>
+    }
+</table>
+<a href="/Faturalar/FaturaEkle/" class="btn btn-primary">Fatura Ekle</a>
+
+

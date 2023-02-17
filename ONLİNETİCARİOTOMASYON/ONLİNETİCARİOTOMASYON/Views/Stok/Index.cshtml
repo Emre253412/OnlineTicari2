@@ -1,0 +1,37 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Stok>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Adet</th>
+        <th>Arızalı Ürün Sayısı</th>
+        <th>Ürün</th>  
+        @if (User.IsInRole("a"))
+        {
+            <th>Sil</th>
+            <th>Güncelle</th>
+        }
+    </tr>
+    @foreach (var e in Model)
+    {
+<tr>
+    <td>@e.stokid</td>
+    <td>@e.adet</td>
+    <td>@e.arızalıürünsayısı</td>
+    <td>@e.ürünid</td>
+    @if (User.IsInRole("a"))
+    {
+        <td><a href="/Stok/StokSil/@e.stokid" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Stok/StokGetir/@e.stokid" class="btn btn-success">Güncelle</a></td>
+    }
+    </tr>
+    }
+</table>
+<a href="/Stok/YeniStok/" class="btn btn-info">Yeni Stok</a>
+

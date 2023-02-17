@@ -1,0 +1,35 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Cari>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satış Geçmişi</th>
+    </tr>
+    @foreach (var e in Model)
+    {
+<tr>
+    <td>@e.cariid</td>
+    <td>@e.cariad</td>
+    <td>@e.carisoyad</td>
+    <td>@e.carisehir</td>
+    <td>@e.carimail</td>
+
+    <td><a href="/Cari/CariSil/@e.cariid" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Cari/CariGetir/@e.cariid" class="btn btn-success">Güncelle</a></td>
+    <td><a href="/Cari/MusteriSatis/@e.cariid" class="btn btn-success">Satış Geçmişi</a></td>
+
+</tr>
+    }
+</table>
+<a href="/Cari/CariEkle" class="btn btn-info">Yeni Cari</a>

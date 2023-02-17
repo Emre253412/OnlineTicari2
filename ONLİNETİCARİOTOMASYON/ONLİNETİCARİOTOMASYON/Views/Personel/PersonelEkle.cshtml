@@ -1,0 +1,25 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Yeni Personel</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.personelad)
+    @Html.TextBoxFor(x => x.personelad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelsoyad)
+    @Html.TextBoxFor(x => x.personelsoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.personelgorsel)
+    @Html.TextBoxFor(x => x.personelgorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.departman)
+    @Html.DropDownListFor(x => x.departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+   
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

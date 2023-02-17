@@ -1,0 +1,39 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+<br />
+<h2>Envanter Güncelle</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Faturalar", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.faturaid)
+    <br />
+    @Html.LabelFor(x => x.faturaserino)
+    @Html.TextBoxFor(x => x.faturaserino, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.faturasırano)
+    @Html.TextBoxFor(x => x.faturasırano, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.vergidairesi)
+    @Html.TextBoxFor(x => x.vergidairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.tarih)
+    @Html.TextBoxFor(x => x.tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.saat)
+    @Html.TextBoxFor(x => x.saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimeden)
+    @Html.TextBoxFor(x => x.teslimeden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.teslimalan)
+    @Html.TextBoxFor(x => x.teslimalan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+}
+
+
+

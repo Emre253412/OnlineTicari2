@@ -1,0 +1,39 @@
+﻿@using ONLİNETİCARİOTOMASYON.Models.Sınıflar
+@model List<Personel>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+    }
+
+    <table class="table table-bordered" style="margin-top:20px;">
+        <tr>
+            <th>ID</th>
+            <th>Personel Ad</th>
+            <th>Soyad</th>
+            <th>Görsel</th>
+            <th>Departman</th>
+            @if (User.IsInRole("a"))
+            {
+                <th>Güncelle</th>
+                <th>Satışlar</th>
+            }
+            </tr>
+        @foreach (var k in Model)
+        {
+    <tr>
+        <td> @k.personelid</td>
+        <td>@k.personelad </td>
+        <td>@k.personelsoyad </td>
+        <td>@k.personelgorsel </td>
+        <td>@k.departman.departmanad </td>
+        @if (User.IsInRole("a"))
+        {
+            <td><a href="/Personel/PersonelGetir/@k.personelid" class="btn btn-danger">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanPersonelSatıs/@k.personelid" class="btn btn-success">Detaylar</a></td>
+        }
+        </tr>
+        }
+    </table>
+    <a href="/Personel/PersonelEkle/" class="btn btn-primary">Personel Ekle</a>
+

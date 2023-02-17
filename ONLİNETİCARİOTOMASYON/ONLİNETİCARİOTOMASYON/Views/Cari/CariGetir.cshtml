@@ -1,0 +1,30 @@
+﻿@model ONLİNETİCARİOTOMASYON.Models.Sınıflar.Cari
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_Adminsayfası.cshtml";
+}
+
+<br />
+<h2>Departman Güncelle</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+
+
+<div class="form-group">
+    @Html.HiddenFor(x => x.cariid)
+    @Html.TextBoxFor(x => x.cariad, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.cariad)
+    <br />
+    @Html.TextBoxFor(x => x.carisoyad, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.carisoyad)
+    <br />
+    @Html.TextBoxFor(x => x.carisehir, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.carisehir)
+    <br />
+    @Html.TextBoxFor(x => x.carimail, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.carimail)
+    
+</div>
+    <button class="btn btn-warning">Güncelle</button>
+}
